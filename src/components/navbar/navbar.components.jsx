@@ -8,17 +8,16 @@ import AvatarIcon from "../../assets/avatar-icon.png";
 
 const Navbar = () => {
 	const [prevScrollPos, setPrevScrollPos] = useState(0);
-	const [visible, setVisible] = useState(true);
+	const [visible, setVisible] = useState(false);
 
 	// Debounce sets a limit on how often handleScroll fires (in ms)
 	const handleScroll = debounce(() => {
-		console.log("fire");
 		const currentScrollPos = window.pageYOffset;
 
 		setVisible(
-			(prevScrollPos > currentScrollPos &&
+			(prevScrollPos < currentScrollPos &&
 				prevScrollPos - currentScrollPos > 70) ||
-				currentScrollPos < 10
+				currentScrollPos > 10
 		);
 
 		setPrevScrollPos(currentScrollPos);
