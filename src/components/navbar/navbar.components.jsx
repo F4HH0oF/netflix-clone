@@ -12,6 +12,7 @@ const Navbar = () => {
 
 	// Debounce sets a limit on how often handleScroll fires (in ms)
 	const handleScroll = debounce(() => {
+		console.log("fire");
 		const currentScrollPos = window.pageYOffset;
 
 		setVisible(
@@ -21,7 +22,7 @@ const Navbar = () => {
 		);
 
 		setPrevScrollPos(currentScrollPos);
-	}, 100);
+	}, 150);
 
 	useEffect(() => {
 		window.addEventListener("scroll", handleScroll);
