@@ -1,9 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./banner.styles.css";
 
 import { truncate } from "../../utils/helpers";
+import axios from "../../utils/axios";
+import requests from "../../utils/requests";
 
 const Banner = () => {
+	const [movie, setMovie] = useState([]);
+
+	useEffect(() => {
+		async function fetchData() {
+			const { data } = await axios.get(requests.fethMetflixOriginals);
+			setMovie(
+				data.results[Math.floor(Math.random() * data.results.length - 1)]
+			);
+			return data;
+		}
+		fetchData();
+	}, []);
+
+	console.log(movie);
+
 	return (
 		<header
 			className="banner"
