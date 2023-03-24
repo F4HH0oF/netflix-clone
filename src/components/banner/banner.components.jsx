@@ -10,11 +10,11 @@ const Banner = () => {
 
 	useEffect(() => {
 		async function fetchData() {
-			const { data } = await axios.get(requests.fethMetflixOriginals);
-			setMovie(
-				data.results[Math.floor(Math.random() * data.results.length - 1)]
-			);
-			return data;
+			const {
+				data: { results },
+			} = await axios.get(requests.fethMetflixOriginals);
+			setMovie(results[Math.floor(Math.random() * results.length - 1)]);
+			return results;
 		}
 		fetchData();
 	}, []);
