@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 
-import HomeScreen from "./components/homescreen/homescreen.components";
+import HomeScreen from "./routes/homescreen/homescreen.components";
 
 const App = () => {
 	return (
