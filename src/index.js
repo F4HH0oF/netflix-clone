@@ -6,9 +6,11 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Login from "./routes/login/login.components";
 
 const router = createBrowserRouter([
 	{ path: "/", element: <App /> },
+	{ path: "/login", element: <Login /> },
 	// { path: "/test", element: <h1>TEsting</h1> },
 ]);
 
